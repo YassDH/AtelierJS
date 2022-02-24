@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #EAEDED;
+            font-family: sans-serif;
+        }
+        .container{
+            display: flex;
+            padding: 50px;
+        }
+        .left,.right{
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            overflow-y: auto;
+        }
+        .box{
+            background-color: #fff;
+            border-radius: 5px;
+            width: 50%;
+            height: 40px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 15px;
+
+        }
+        .box .supprimer{
+            right: 0;
+            background-color: #C0392B;
+            height: 100%;
+            width: 40px;
+            border-radius: 0px 5px 5px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+        }
+        .right input{
+            width: 50%;
+        }
+        .btn{
+            width: 50%;
+            color: #fff;
+            background-color: #5DADE2;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background-color: #3498DB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right">
+            <label>Name : </label>
+            <input type="text" class="name">
+            <label>Content : </label>
+            <input type="text" class="content"><br>
+            <button class="btn">Ajouter</button>
+        </div>
+    </div>
+    <script>
+        const name = document.querySelector('.name');
+        const content = document.querySelector('.content');
+        const button = document.querySelector('.btn');
+        const left = document.querySelector('.left');
+
+        button.addEventListener(
+            'click',
+            ()=>{
+            if(name.value != "" && content.value != ""){
+                var newNode = document.createElement("div");
+                newNode.classList.add('box');
+                    var p = document.createElement("h3");
+                    p.innerHTML = name.value + " : " + content.value;
+                newNode.appendChild(p);
+                    var supprimer= document.createElement("div");
+                    supprimer.classList.add("supprimer");
+                        var trash = document.createElement("i");
+                        trash.classList.add('fa');
+                        trash.classList.add('fa-trash');
+                    supprimer.appendChild(trash);
+                newNode.appendChild(supprimer);
+                left.appendChild(newNode);
+
+                supprimer.addEventListener(
+                    'click',
+                    ()=>{
+                        newNode.remove();
+                    }
+                );
+            }else{
+                alert("Vous devez remplir les champs !");
+            }
+            }
+        );
+    </script>
+    
+</body>
+</html>

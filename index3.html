@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="test">Test</p>
+    <input type="color" class="couleur">
+    <input type="number" class="size">
+    <select id="ffamily">
+        <option value="arial, sans-serif">Arial sans-serif</option>
+        <option value="Times">Times</option>
+        <option value="Verdana, sans-serif">Verdana sans-serif</option>
+    </select>
+    <script>
+        const test = document.querySelector('.test');
+        const couleur = document.querySelector('.couleur');
+        const size = document.querySelector('.size');
+        const ffamily = document.querySelector('#ffamily');
+
+        couleur.addEventListener(
+            "change",
+            ()=>{
+                test.style.color = couleur.value;
+            }
+        );
+
+        size.addEventListener(
+            "change",
+            ()=>{
+                test.style.fontSize = size.value + "px";
+            }
+        );
+
+        ffamily.addEventListener(
+            "change",
+            ()=>{
+                test.style.fontFamily = ffamily.value;
+            }
+        );
+
+    </script>
+</body>
+</html>

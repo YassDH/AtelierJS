@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li class="x1">LI 1</li>
+        <li class="x2">LI 2</li>
+        <li class="x3">LI 3</li>
+        <li class="x4">LI 4</li>
+    </ol>
+    <script>
+        var T=["red","black","green","yellow","pink","blue","cyan","brown","gold","grey"];
+        var x1 = document.querySelector('.x1');
+        var x2 = document.querySelector('.x2');
+        var x3 = document.querySelector('.x3');
+        var x4 = document.querySelector('.x4');
+        x1.addEventListener('click',()=>{
+            var x=10*Math.random();
+            x1.style.color = T[Math.floor(x)];
+        });        
+        x2.addEventListener('click',()=>{
+            var x=10*Math.random();
+            x2.style.color = T[Math.floor(x)];
+        });        
+        x3.addEventListener('click',()=>{
+            var x=10*Math.random();
+            x3.style.color = T[Math.floor(x)];
+        });
+        x4.addEventListener('click',()=>{
+            var x=10*Math.random();
+            x4.style.color = T[Math.floor(x)];
+        });
+    </script>
+</body>
+</html>
